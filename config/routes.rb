@@ -1,4 +1,8 @@
 Resume::Application.routes.draw do
+  get "about/index"
+
+  get "resume/index"
+
   resources :projects
 
   # The priority is based upon order of creation:

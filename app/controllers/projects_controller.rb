@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @projects = Project.all
     @project = Project.find(params[:id])
 
     respond_to do |format|
@@ -80,4 +81,16 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # GET /projects/gallery
+  # GET /projects/gallery.json
+  def gallery
+    @projects = Project.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @projects }
+    end
+  end
+
 end
